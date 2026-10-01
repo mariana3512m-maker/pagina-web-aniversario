@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
@@ -6,61 +6,50 @@
 <title>HAPPY B-DAY ★ MARI</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Special+Elite&family=VT323&display=swap');
-:root{--dark:#000000;--accent:#222222;--ink:#111;--paper:#fff;--lime:#d8ff53;--gray:#333333}
+:root{--dark:#000000;--ink:#111;--lime:#d8ff53}
 *{box-sizing:border-box}
 body{margin:0;color:var(--ink);font-family:'Special Elite',monospace;background-color:#fff;background-image:linear-gradient(45deg,#111 25%,transparent 25%),linear-gradient(-45deg,#111 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#111 75%),linear-gradient(-45deg,transparent 75%,#111 75%);background-size:34px 34px;background-position:0 0,0 17px,17px -17px,-17px 0}
 .page{width:min(1000px,calc(100% - 28px));margin:30px auto;background:#fff;border:4px solid #111;box-shadow:12px 12px 0 var(--dark);position:relative;overflow:hidden}
 .topline{background:#111;color:#fff;padding:8px 14px;font:18px 'VT323';letter-spacing:2px;display:flex;justify-content:space-between}
-.hero{padding:35px 22px 25px;text-align:center;background:radial-gradient(circle at 10% 20%,#e0e0e0 0 7%,transparent 8%),radial-gradient(circle at 90% 70%,#e0e0e0 0 6%,transparent 7%),repeating-linear-gradient(135deg,#fff 0 12px,#f0f0f0 12px 24px);border-bottom:3px dashed #111;position:relative}
+.hero{padding:35px 22px 25px;text-align:center;background:repeating-linear-gradient(135deg,#fff 0 12px,#f0f0f0 12px 24px);border-bottom:3px dashed #111;position:relative}
 .kicker{font:20px 'VT323';letter-spacing:4px;background:var(--lime);display:inline-block;padding:4px 12px;border:2px solid #111;transform:rotate(-2deg)}
-h1{font:clamp(42px,9vw,86px)/.92 'Permanent Marker';margin:18px 0 10px;text-shadow:4px 4px 0 var(--dark),7px 7px 0 #555;color:#111;-webkit-text-stroke:1.5px #111}
+h1{font:clamp(42px,9vw,86px)/.92 'Permanent Marker';margin:18px 0 10px;text-shadow:4px 4px 0 var(--dark);color:#111}
 .subtitle{font:18px 'VT323';letter-spacing:2px}
-.sticker{position:absolute;font-size:34px;filter:drop-shadow(2px 2px 0 var(--dark));}
-.s1{top:20px;left:5%}.s2{right:6%;top:24px}.s3{bottom:15px;left:9%}.s4{bottom:18px;right:9%}
-main{padding:22px;background:linear-gradient(#fff,#fff) padding-box}
+main{padding:22px}
 .marquee{overflow:hidden;white-space:nowrap;background:var(--dark);color:#fff;border:2px solid #111;padding:7px;font:20px 'VT323';margin-bottom:22px}
 .marquee span{display:inline-block;animation:scroll 18s linear infinite}
 @keyframes scroll{to{transform:translateX(-50%)}}
 .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
 .panel{border:3px solid #111;box-shadow:5px 5px 0 #111;background:#fff}
 .panel-title{background:#111;color:#fff;padding:7px 10px;font:21px 'VT323';letter-spacing:1px;display:flex;justify-content:space-between}
-.player{padding:16px;background:repeating-linear-gradient(0deg,#f7f7f7 0 3px,#eee 3px 4px)}
+.player{padding:16px;background:#eee}
 .disc-wrap{display:flex;align-items:center;gap:15px}
-.disc{width:116px;height:116px;border-radius:50%;flex:none;background:repeating-radial-gradient(circle,#222 0 2px,#555 3px 4px,#111 5px 8px);border:5px solid #aaa;box-shadow:0 0 0 3px #111;position:relative;animation:spin 4s linear infinite;animation-play-state:paused}
-.disc:before{content:"";position:absolute;inset:38%;background:var(--dark);border:3px solid #fff;border-radius:50%}
-.disc:after{content:"★";position:absolute;inset:0;display:grid;place-items:center;font-size:18px;color:#fff}
-.disc.playing{animation-play-state:running}@keyframes spin{to{transform:rotate(360deg)}}
-.track{font:19px 'VT323';font-size:24px}.artist{font-size:15px;margin-top:5px}
-.controls{display:flex;gap:8px;margin:15px 0 10px;flex-wrap:wrap}
+.disc{width:100px;height:100px;border-radius:50%;background:#222;border:5px solid #aaa;box-shadow:0 0 0 3px #111;position:relative;animation:spin 4s linear infinite;animation-play-state:paused}
+.disc.playing{animation-play-state:running}
+@keyframes spin{to{transform:rotate(360deg)}}
+.track{font:24px 'VT323'}.artist{font-size:15px;margin-top:5px}
+.controls{display:flex;gap:8px;margin:15px 0 10px}
 button{font:18px 'VT323';border:2px solid #111;background:var(--lime);padding:7px 12px;cursor:pointer;box-shadow:3px 3px 0 #111}
-button:hover{background:var(--dark);color:#fff;transform:translate(-1px,-1px)}
-button:active{box-shadow:1px 1px 0 #111;transform:translate(2px,2px)}
-#playlist{padding-left:20px;margin:10px 0 0;font:16px 'VT323';line-height:1.55}
-#playlist li{cursor:pointer;padding:2px 5px}#playlist li.active{background:#333;color:#fff;font-weight:bold}
-.note{font-size:12px;line-height:1.5;color:#444;margin-top:10px}
-.birthday{padding:18px;background:#f9f9f9;min-height:100%}
-.birthday h2,.gallery h2{font:30px 'Permanent Marker';margin:0 0 12px;color:var(--dark);text-shadow:1px 1px #888}
-.birthday p{font-size:16px;line-height:1.65;margin:10px 0}
-.edit{background:#fff;border:2px dashed var(--dark);padding:12px;min-height:155px}
+#playlist{padding-left:20px;margin:10px 0 0;font:16px 'VT323'}
+.birthday{padding:18px;background:#f9f9f9}
+.birthday h2,.gallery h2{font:30px 'Permanent Marker';margin:0 0 12px}
+.birthday p{font-size:16px;line-height:1.6;margin:10px 0}
+.edit{background:#fff;border:2px dashed var(--dark);padding:12px}
 .gallery{margin-top:22px}
 .gallery-intro{font:16px 'VT323';margin:0 0 12px}
 .stickers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.tile{min-height:145px;border:3px solid #111;position:relative;overflow:hidden;background:#eee;box-shadow:4px 4px 0 var(--dark);display:flex;align-items:end}
-.tile img{position:absolute;width:100%;height:100%;object-fit:cover;inset:0;filter:saturate(.85)}
-.tile:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 38%,rgba(0,0,0,.8))}
-.tile b{position:relative;z-index:1;color:#fff;font:21px 'VT323';padding:9px;text-shadow:2px 2px #000}
-.tile .tag{position:absolute;z-index:2;right:6px;top:6px;background:var(--lime);border:2px solid #111;padding:2px 5px;font:14px 'VT323';transform:rotate(4deg)}
-.footer{text-align:center;background:#111;color:#fff;padding:18px;font:20px 'VT323';letter-spacing:1px}
-.footer strong{color:var(--lime)}
-@media(max-width:720px){.grid{grid-template-columns:1fr}.stickers{grid-template-columns:repeat(2,1fr)}.disc-wrap{gap:12px}.disc{width:92px;height:92px}.hero{padding:40px 12px}.s1,.s2{top:8px}.s3,.s4{bottom:5px}}
-@media(max-width:420px){.stickers{grid-template-columns:1fr 1fr}.tile{min-height:120px}.page{width:calc(100% - 18px);margin:18px auto}.topline{font-size:15px}}
+.tile{min-height:160px;border:3px solid #111;position:relative;overflow:hidden;background:#eee;box-shadow:4px 4px 0 var(--dark);display:flex;align-items:flex-end}
+.tile img{position:absolute;width:100%;height:100%;object-fit:cover;inset:0}
+.tile b{position:relative;z-index:1;color:#fff;font:20px 'VT323';padding:8px;background:rgba(0,0,0,0.75);width:100%}
+.tile .tag{position:absolute;z-index:2;right:6px;top:6px;background:var(--lime);border:2px solid #111;padding:2px 5px;font:14px 'VT323'}
+.footer{text-align:center;background:#111;color:#fff;padding:18px;font:20px 'VT323'}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.stickers{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
 <div class="page">
-  <div class="topline"><span>★ MARI'S BIRTHDAY WEBPAGE ★</span><span>EST. 2000s // XOXO</span></div>
+  <div class="topline"><span>★ MARI'S BIRTHDAY WEBPAGE ★</span><span>EST. 2000s</span></div>
   <header class="hero">
-    <span class="sticker s1">🖤</span><span class="sticker s2">✦</span><span class="sticker s3">🎸</span><span class="sticker s4">💿</span>
     <div class="kicker">A VERY SPECIAL DAY!</div>
     <h1>HAPPY<br>BIRTHDAY!</h1>
     <div class="subtitle">★ TO THE COOLEST HUMAN IN THE ROOM ★</div>
@@ -73,35 +62,29 @@ button:active{box-shadow:1px 1px 0 #111;transform:translate(2px,2px)}
         <div class="player">
           <div class="disc-wrap">
             <div class="disc" id="disc"></div>
-            <div><div class="track" id="trackName">Choose your soundtrack</div><div class="artist" id="artistName">the birthday edition ★</div></div>
+            <div><div class="track" id="trackName">Decode</div><div class="artist" id="artistName">Paramore ★</div></div>
           </div>
           <div class="controls">
-            <button id="prev" aria-label="Anterior">|◀</button>
             <button id="play">▶ PLAY</button>
-            <button id="next" aria-label="Próxima">▶|</button>
           </div>
-          <audio id="audio"></audio>
-          <ol id="playlist">
-            <li class="active">Paramore — Decode</li>
-          </ol>
+          <audio id="audio" src="./musicas/decode.mp3"></audio>
         </div>
       </section>
       <section class="panel">
-        <div class="panel-title"><span>♡ A LITTLE MESSAGE ♡</span><span>✎</span></div>
+        <div class="panel-title"><span>♡ A LITTLE MESSAGE ♡</span></div>
         <div class="birthday">
           <h2>Dear birthday girl,</h2>
-          <div class="edit" contenteditable="true" spellcheck="true" aria-label="Mensagem de aniversário editável">
+          <div class="edit" contenteditable="true">
             <p>Hoje é o seu dia!!! 🖤</p>
             <p>Espero que seu novo ciclo seja cheio de música alta, momentos inesquecíveis, risadas até doer a barriga e pessoas que façam você se sentir muito amada.</p>
-            <p>Continue sendo essa pessoa incrível, única e maravilhosamente você. Que nunca faltem motivos para comemorar — e nem trilhas sonoras para cada capítulo da vida.</p>
-            <p>Com muito carinho,<br><b>[SEU NOME]</b> ♥</p>
+            <p>Continue sendo essa pessoa incrível, única e maravilhosamente você!</p>
+            <p>Com muito carinho ♥</p>
           </div>
-          <p class="note">✎ Clique no texto para editar diretamente nesta página.</p>
         </div>
       </section>
     </div>
     <section class="gallery">
-      <div class="panel-title"><span>★ HER UNIVERSE ★</span><span>FAV THINGS.exe</span></div>
+      <div class="panel-title"><span>★ HER UNIVERSE ★</span></div>
       <p class="gallery-intro">UM MURAL DE COISAS QUE SÃO A CARA DELA!</p>
       <div class="stickers">
         <div class="tile">
@@ -125,83 +108,31 @@ button:active{box-shadow:1px 1px 0 #111;transform:translate(2px,2px)}
           <span class="tag">YUM</span><b>MAIONESE JUNIOR</b>
         </div>
         <div class="tile">
-          <img alt="Salgadinho Gulão e Guaraná Mineiro" src="./imagens/mineiro.jpg">
+          <img alt="Guaraná Mineiro" src="./imagens/mineiro.jpg">
           <span class="tag">GULÃO!</span><b>SALGADINHO & MINEIRO</b>
         </div>
       </div>
     </section>
   </main>
-  <footer>MADE WITH <strong>♥</strong>, GUITARS & A LITTLE BIT OF DRAMA · <span>2000s FOREVER</span></footer>
+  <footer class="footer">MADE WITH ♥ FOR MARI</footer>
 </div>
 
 <script>
 const audio = document.getElementById('audio');
 const disc = document.getElementById('disc');
 const playBtn = document.getElementById('play');
-const nameEl = document.getElementById('trackName');
-const artistEl = document.getElementById('artistName');
-const items = [...document.querySelectorAll('#playlist li')];
 
-const songs = [
-  { name: "Decode", artist: "Paramore", url: "./musicas/decode.mp3" }
-];
-
-let current = 0;
-
-function loadTrack(index) {
-  current = index;
-  audio.src = songs[current].url;
-  nameEl.textContent = songs[current].name;
-  artistEl.textContent = songs[current].artist + ' ★';
-  items.forEach((x, n) => x.classList.toggle('active', n === current));
-}
-
-function togglePlay() {
-  if (!audio.src) loadTrack(0);
+playBtn.addEventListener('click', () => {
   if (audio.paused) {
-    audio.play().catch(() => {});
+    audio.play();
+    playBtn.textContent = 'Ⅱ PAUSE';
+    disc.classList.add('playing');
   } else {
     audio.pause();
-  }
-}
-
-playBtn.addEventListener('click', togglePlay);
-
-audio.addEventListener('play', () => {
-  playBtn.textContent = 'Ⅱ PAUSE';
-  disc.classList.add('playing');
-});
-
-audio.addEventListener('pause', () => {
-  playBtn.textContent = '▶ PLAY';
-  disc.classList.remove('playing');
-});
-
-audio.addEventListener('ended', () => {
-  if (current + 1 < songs.length) {
-    loadTrack(current + 1);
-    audio.play();
+    playBtn.textContent = '▶ PLAY';
+    disc.classList.remove('playing');
   }
 });
-
-items.forEach((li, i) => {
-  li.addEventListener('click', () => {
-    loadTrack(i);
-    audio.play();
-  });
-});
-
-document.getElementById('prev').addEventListener('click', () => {
-  loadTrack((current - 1 + songs.length) % songs.length);
-  audio.play();
-});
-
-document.getElementById('next').addEventListener('click', () => {
-  loadTrack((current + 1) % songs.length);
-  audio.play();
-});
-
-loadTrack(0);
 </script>
 </body>
 </html>
