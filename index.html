@@ -5,6 +5,27 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>HAPPY B-DAY ★ MARI</title>
 <style>
+  <head>
+  <style>
+    /* Cole o código CSS aqui dentro */
+    .player {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .playlist {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .track-item {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Special+Elite&family=VT323&display=swap');
 :root{--dark:#000000;--ink:#111;--lime:#d8ff53}
 *{box-sizing:border-box}
@@ -62,12 +83,35 @@ button{font:18px 'VT323';border:2px solid #111;background:var(--lime);padding:7p
         <div class="player">
           <div class="disc-wrap">
             <div class="disc" id="disc"></div>
-            <div><div class="track" id="trackName">DECODE</div><div class="artist" id="artistName">PARAMORE ★</div></div>
-             <div><div class="track" id="trackName">NINGUÉM ME ENSINOU</div><div class="artist" id="artistName">LAGUM ★</div></div>
-             <div><div class="track" id="trackName">MY HAPPY ENDING</div><div class="artist" id="artistName">AVRIL LAVIGNE ★</div></div>
-             <div><div class="track" id="trackName">UNIVERSO DE COISAS QUE EU DESCONHEÇO </div><div class="artist" id="artistName">ANAVITÓRIA_LAGUM ★</div></div>
-             <div><div class="track" id="trackName">DROWN</div><div class="artist" id="artistName">BRING ME THE HORIZON★</div></div>
-          </div>
+           <div class="player">
+  <div class="disc-wrap">
+    <div class="disc" id="disc"></div>
+  </div>
+  
+  <!-- Lista de músicas vertical -->
+  <div class="playlist">
+    <div class="track-item active">
+      <div class="track">DECODE</div>
+      <div class="artist">PARAMORE ★</div>
+    </div>
+    <div class="track-item">
+      <div class="track">NINGUÉM ME ENSINOU</div>
+      <div class="artist">LAGUM ★</div>
+    </div>
+    <div class="track-item">
+      <div class="track">MY HAPPY ENDING</div>
+      <div class="artist">AVRIL LAVIGNE ★</div>
+    </div>
+    <div class="track-item">
+      <div class="track">UNIVERSO DE COISAS QUE EU DESCONHEÇO</div>
+      <div class="artist">ANAVITÓRIA_LAGUM ★</div>
+    </div>
+    <div class="track-item">
+      <div class="track">DROWN</div>
+      <div class="artist">BRING ME THE HORIZON ★</div>
+    </div>
+  </div>
+</div>
           <div class="controls">
             <button id="play">▶ PLAY</button>
           </div>
