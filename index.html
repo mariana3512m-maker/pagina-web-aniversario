@@ -44,6 +44,31 @@ button{font:18px 'VT323';border:2px solid #111;background:var(--lime);padding:7p
 .tile .tag{position:absolute;z-index:2;right:6px;top:6px;background:var(--lime);border:2px solid #111;padding:2px 5px;font:14px 'VT323'}
 .footer{text-align:center;background:#111;color:#fff;padding:18px;font:20px 'VT323'}
 @media(max-width:720px){.grid{grid-template-columns:1fr}.stickers{grid-template-columns:repeat(2,1fr)}}
+  .player {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.playlist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.track-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.track {
+  font-weight: bold;
+}
+
+.artist {
+  font-size: 0.85em;
+  opacity: 0.8;
+}
 </style>
 </head>
 <body>
@@ -168,6 +193,44 @@ playBtn.addEventListener('click', () => {
     disc.classList.remove('playing');
   }
 });
+  <script>
+  // Lista de músicas com os nomes e artistas
+  const playlist = [
+    { title: "DECODE", artist: "PARAMORE ★" },
+    { title: "NINGUÉM ME ENSINOU", artist: "LAGUM ★" },
+    { title: "MY HAPPY ENDING", artist: "AVRIL LAVIGNE ★" },
+    { title: "UNIVERSO DE COISAS QUE EU DESCONHEÇO", artist: "ANAVITÓRIA_LAGUM ★" },
+    { title: "DROWN", artist: "BRING ME THE HORIZON ★" }
+  ];
+
+  let currentIndex = 0;
+
+  // Elementos da página
+  const trackName = document.getElementById("trackName");
+  const artistName = document.getElementById("artistName");
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
+
+  // Função para atualizar a música no ecrã
+  function updateTrack() {
+    if (trackName && artistName) {
+      trackName.textContent = playlist[currentIndex].title;
+      artistName.textContent = playlist[currentIndex].artist;
+    }
+  }
+
+  // Evento para a música anterior
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
+    updateTrack();
+  });
+
+  // Evento para a próxima música
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % playlist.length;
+    updateTrack();
+  });
+</script>
 </script>
 </body>
 </html>
