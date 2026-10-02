@@ -6,143 +6,128 @@
 <title>HAPPY B-DAY ★ MARI</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Special+Elite&family=VT323&display=swap');
-:root{--dark:#000000;--ink:#111;--lime:#d8ff53}
-*{box-sizing:border-box}
-body{margin:0;color:var(--ink);font-family:'Special Elite',monospace;background-color:#fff;background-image:linear-gradient(45deg,#111 25%,transparent 25%),linear-gradient(-45deg,#111 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#111 75%),linear-gradient(-45deg,transparent 75%,#111 75%);background-size:34px 34px;background-position:0 0,0 17px,17px -17px,-17px 0}
-.page{width:min(1000px,calc(100% - 28px));margin:30px auto;background:#fff;border:4px solid #111;box-shadow:12px 12px 0 var(--dark);position:relative;overflow:hidden}
-.topline{background:#111;color:#fff;padding:8px 14px;font:18px 'VT323';letter-spacing:2px;display:flex;justify-content:space-between}
-.hero{padding:35px 22px 25px;text-align:center;background:repeating-linear-gradient(135deg,#fff 0 12px,#f0f0f0 12px 24px);border-bottom:3px dashed #111;position:relative}
-.kicker{font:20px 'VT323';letter-spacing:4px;background:var(--lime);display:inline-block;padding:4px 12px;border:2px solid #111;transform:rotate(-2deg)}
-h1{font:clamp(42px,9vw,86px)/.92 'Permanent Marker';margin:18px 0 10px;text-shadow:4px 4px 0 var(--dark);color:#111}
-.subtitle{font:18px 'VT323';letter-spacing:2px}
-main{padding:22px}
-.marquee{overflow:hidden;white-space:nowrap;background:var(--dark);color:#fff;border:2px solid #111;padding:7px;font:20px 'VT323';margin-bottom:22px}
-.marquee span{display:inline-block;animation:scroll 18s linear infinite}
-@keyframes scroll{to{transform:translateX(-50%)}}
+
+:root {
+  --dark: #000000;
+  --ink: #111;
+  --lime: #d8ff53;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: 'Special Elite', monospace;
+  background-color: #fff;
+  background-image: 
+    linear-gradient(45deg, #111 25%, transparent 25%),
+    linear-gradient(-45deg, #111 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #111 75%),
+    linear-gradient(-45deg, transparent 75%, #111 75%);
+  background-size: 34px 34px;
+  background-position: 0 0, 0 17px, 17px -17px, -17px 0;
+}
+
+.page {
+  width: min(1000px, calc(100% - 28px));
+  margin: 30px auto;
+  background: #fff;
+  border: 4px solid #111;
+  box-shadow: 12px 12px 0 var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.topline {
+  background: #111;
+  color: #fff;
+  padding: 8px 14px;
+  font: 18px 'VT323';
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero {
+  padding: 35px 22px 25px;
+  text-align: center;
+  background: repeating-linear-gradient(135deg, #fff 0 12px, #f0f0f0 12px 24px);
+  border-bottom: 3px dashed #111;
+  position: relative;
+}
+
+.kicker {
+  font: 20px 'VT323';
+  letter-spacing: 4px;
+  background: var(--lime);
+  display: inline-block;
+  padding: 4px 12px;
+  border: 2px solid #111;
+  transform: rotate(-2deg);
+}
+
+h1 {
+  font: clamp(42px, 9vw, 86px)/.92 'Permanent Marker';
+  margin: 18px 0 10px;
+  text-shadow: 4px 4px 0 var(--dark);
+  color: #111;
+}
+
+.subtitle {
+  font: 18px 'VT323';
+  letter-spacing: 2px;
+}
+
+main {
+  padding: 22px;
+}
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--dark);
+  color: #fff;
+  border: 2px solid #111;
+  padding: 7px;
+  font: 20px 'VT323';
+  margin-bottom: 22px;
+}
+
+.marquee span {
+  display: inline-block;
+  animation: scroll 18s linear infinite;
+}
+
+@keyframes scroll {
+  to { transform: translateX(-50%); }
+}
+
 .grid {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
-.panel{border:3px solid #111;box-shadow:5px 5px 0 #111;background:#fff}
-.panel-title{background:#111;color:#fff;padding:7px 10px;font:21px 'VT323';letter-spacing:1px;display:flex;justify-content:space-between}
 
+.panel {
+  border: 3px solid #111;
+  box-shadow: 5px 5px 0 #111;
+  background: #fff;
+}
 
-.disc{width:100px;height:100px;border-radius:50%;background:#222;border:5px solid #aaa;box-shadow:0 0 0 3px #111;position:relative;animation:spin 4s linear infinite;animation-play-state:paused}
-.disc.playing{animation-play-state:running}
-@keyframes spin{to{transform:rotate(360deg)}}
-.track{font:24px 'VT323'}.artist{font-size:15px;margin-top:5px}
-.controls{display:flex;gap:8px;margin:15px 0 10px}
-button{font:18px 'VT323';border:2px solid #111;background:var(--lime);padding:7px 12px;cursor:pointer;box-shadow:3px 3px 0 #111}
-#playlist{padding-left:20px;margin:10px 0 0;font:16px 'VT323'}
-.birthday{padding:18px;background:#f9f9f9}
-.birthday h2,.gallery h2{font:30px 'Permanent Marker';margin:0 0 12px}
-.birthday p{font-size:16px;line-height:1.6;margin:10px 0}
-.edit{background:#fff;border:2px dashed var(--dark);padding:12px}
-.gallery{margin-top:22px}
-.gallery-intro{font:16px 'VT323';margin:0 0 12px}
-.stickers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.tile{min-height:160px;border:3px solid #111;position:relative;overflow:hidden;background:#eee;box-shadow:4px 4px 0 var(--dark);display:flex;align-items:flex-end}
-.tile img{position:absolute;width:100%;height:100%;object-fit:cover;inset:0}
-.tile b{position:relative;z-index:1;color:#fff;font:20px 'VT323';padding:8px;background:rgba(0,0,0,0.75);width:100%}
-.tile .tag{position:absolute;z-index:2;right:6px;top:6px;background:var(--lime);border:2px solid #111;padding:2px 5px;font:14px 'VT323'}
-.footer{text-align:center;background:#111;color:#fff;padding:18px;font:20px 'VT323'}
-@media(max-width:720px){.grid{grid-template-columns:1fr}.stickers{grid-template-columns:repeat(2,1fr)}}
-  .player {
+.panel-title {
+  background: #111;
+  color: #fff;
+  padding: 7px 10px;
+  font: 21px 'VT323';
+  letter-spacing: 1px;
   display: flex;
-  align-items: center;
-  gap: 20px;
+  justify-content: space-between;
 }
 
-.playlist {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.track-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.track {
-  font-weight: bold;
-}
-
-.artist {
-  font-size: 0.85em;
-  opacity: 0.8;
-}
-  /* Ajustes automáticos para ecrãs de telemóvel */
-@media (max-width: 600px) {
-  .player {
-    flex-direction: column; /* Coloca o disco em cima e as músicas em baixo */
-    text-align: center;
-    gap: 15px;
-  }
-
-  .playlist {
-    width: 100%;
-    align-items: center;
-  }
-
-  .controls {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    gap: 8px;
-  }
-}
-  /* Estilo geral do player */
-.player {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  gap: 15px;
-  padding: 15px;
-  flex-wrap: wrap; /* Permite quebrar linha quando faltar espaço */
-}
-
-/* Onde fica a faixa e o disco */
-.disc-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Lista de texto com a faixa e artista */
-.track-info {
-  text-align: center;
-  max-width: 100%;
-  word-break: break-word; /* Evita que o texto saia da caixa */
-}
-
-/* Botões do player */
-.controls {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.controls button {
-  padding: 8px 12px;
-  font-size: 14px;
-}
-
-/* Regra específica para celulares (telas menores que 600px) */
-@media (max-width: 600px) {
-  .player {
-    flex-direction: column; /* Coloca disco, nome da música e botões um abaixo do outro */
-    text-align: center;
-  }
-  
-  .controls {
-    width: 100%;
-  }
-}
-  /* Layout base do Player */
+/* --- ESTRUTURA DO PLAYER --- */
 .player {
   display: flex;
   flex-direction: column;
@@ -153,30 +138,47 @@ button{font:18px 'VT323';border:2px solid #111;background:var(--lime);padding:7p
   text-align: center;
 }
 
-/* Tamanho e centralização do Disco */
 .disc-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Informações da Música em Destaque */
+.disc {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #222;
+  border: 5px solid #aaa;
+  box-shadow: 0 0 0 3px #111;
+  position: relative;
+  animation: spin 4s linear infinite;
+  animation-play-state: paused;
+}
+
+.disc.playing {
+  animation-play-state: running;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 .track-info {
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 .track {
-  font-size: 1.2rem;
+  font: 26px 'VT323';
   font-weight: bold;
-  margin-bottom: 4px;
 }
 
 .artist {
-  font-size: 0.9rem;
+  font-size: 15px;
+  margin-top: 4px;
   opacity: 0.8;
 }
 
-/* Botões do Player lado a lado */
 .controls {
   display: flex;
   flex-direction: row;
@@ -186,52 +188,165 @@ button{font:18px 'VT323';border:2px solid #111;background:var(--lime);padding:7p
   width: 100%;
 }
 
-.controls button {
-  padding: 8px 12px;
-  font-size: 0.85rem;
+button {
+  font: 18px 'VT323';
+  border: 2px solid #111;
+  background: var(--lime);
+  padding: 7px 14px;
   cursor: pointer;
+  box-shadow: 3px 3px 0 #111;
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #111;
+}
+
+/* --- SEÇÃO DA MENSAGEM --- */
+.birthday {
+  padding: 18px;
+  background: #f9f9f9;
+}
+
+.birthday h2, .gallery h2 {
+  font: 30px 'Permanent Marker';
+  margin: 0 0 12px;
+}
+
+.birthday p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.edit {
+  background: #fff;
+  border: 2px dashed var(--dark);
+  padding: 12px;
+}
+
+/* --- MURAL / GALERIA --- */
+.gallery {
+  margin-top: 22px;
+}
+
+.gallery-intro {
+  font: 16px 'VT323';
+  margin: 12px 0;
+}
+
+.stickers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.tile {
+  min-height: 160px;
+  border: 3px solid #111;
+  position: relative;
+  overflow: hidden;
+  background: #eee;
+  box-shadow: 4px 4px 0 var(--dark);
+  display: flex;
+  align-items: flex-end;
+}
+
+.tile img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  inset: 0;
+}
+
+.tile b {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font: 20px 'VT323';
+  padding: 8px;
+  background: rgba(0,0,0,0.75);
+  width: 100%;
+}
+
+.tile .tag {
+  position: absolute;
+  z-index: 2;
+  right: 6px;
+  top: 6px;
+  background: var(--lime);
+  border: 2px solid #111;
+  padding: 2px 5px;
+  font: 14px 'VT323';
+}
+
+.footer {
+  text-align: center;
+  background: #111;
+  color: #fff;
+  padding: 18px;
+  font: 20px 'VT323';
+}
+
+/* RESPONSIVIDADE PARA TELEMÓVEIS */
+@media (max-width: 600px) {
+  .stickers {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 </style>
 </head>
 <body>
+
 <div class="page">
-  <div class="topline"><span>★ MARI'S BIRTHDAY WEBPAGE ★</span><span>EST. 2000s</span></div>
+  <div class="topline">
+    <span>★ MARI'S BIRTHDAY WEBPAGE ★</span>
+    <span>EST. 2000s</span>
+  </div>
+
   <header class="hero">
     <div class="kicker">A VERY SPECIAL DAY!</div>
     <h1>HAPPY<br>BIRTHDAY!</h1>
     <div class="subtitle">★ PARA A EMO MAIS RISONHA DO MUNDO!! ★</div>
   </header>
+
   <main>
-    <div class="marquee"><span>♥ HAPPY BIRTHDAY ♥ KEEP ROCKING ♥ YOU ARE ICONIC ♥ HAPPY BIRTHDAY ♥ KEEP ROCKING ♥ YOU ARE ICONIC ♥ </span></div>
+    <div class="marquee">
+      <span>♥ HAPPY BIRTHDAY ♥ KEEP ROCKING ♥ YOU ARE ICONIC ♥ HAPPY BIRTHDAY ♥ KEEP ROCKING ♥ YOU ARE ICONIC ♥ </span>
+    </div>
+
     <div class="grid">
+      <!-- PAINEL DO PLAYER DE MÚSICA -->
       <section class="panel">
-        <div class="panel-title"><span>♪ SUA TRILHA SONORA ♪</span><span>◉ REC</span></div>
+        <div class="panel-title">
+          <span>♪ SUA TRILHA SONORA ♪</span>
+          <span>◉ REC</span>
+        </div>
+        
         <div class="player">
           <div class="disc-wrap">
             <div class="disc" id="disc"></div>
-           <div class="player">
- <section class="player">
-  <div class="disc-wrap">
-    <div class="disc" id="disc"></div>
-  </div>
+          </div>
 
-  <div class="track-info">
-    <div class="track" id="trackName">DECODE</div>
-    <div class="artist" id="artistName">PARAMORE ★</div>
-  </div>
+          <div class="track-info">
+            <div class="track" id="trackName">DECODE</div>
+            <div class="artist" id="artistName">PARAMORE ★</div>
+          </div>
 
-  <div class="controls">
-    <button id="prev">⏮ ANTERIOR</button>
-    <button id="play">▶ PLAY</button>
-    <button id="next">NEXT ⏭</button>
-  </div>
-</section>
-<!-- Apenas UMA tag de áudio -->
-<audio id="audio" src="./musicas/decode.mp3"></audio>
+          <div class="controls">
+            <button id="prev">⏮ ANTERIOR</button>
+            <button id="play">▶ PLAY</button>
+            <button id="next">NEXT ⏭</button>
+          </div>
         </div>
       </section>
+
+      <!-- PAINEL DA MENSAGEM -->
       <section class="panel">
-        <div class="panel-title"><span>♡ TUDO OQUE QUERO DIZER NAO CABE AQUI ♡</span></div>
+        <div class="panel-title">
+          <span>♡ TUDO OQUE QUERO DIZER NAO CABE AQUI ♡</span>
+        </div>
         <div class="birthday">
           <h2>Dear birthday girl,</h2>
           <div class="edit" contenteditable="true">
@@ -243,42 +358,55 @@ button{font:18px 'VT323';border:2px solid #111;background:var(--lime);padding:7p
         </div>
       </section>
     </div>
+
+    <!-- MURAL DE IMAGENS -->
     <section class="gallery">
       <div class="panel-title"><span>★ SEU UNIVERSE ★</span></div>
       <p class="gallery-intro">UM PEQUENO MURAL DE COISAS QUE ME LEMBRAM VOCÊ!</p>
+      
       <div class="stickers">
         <div class="tile">
           <img alt="Crepúsculo" src="./imagens/crepusculo.jpg">
-          <span class="tag">TEAM BELLA ???</span><b>CREPÚSCULO</b>
+          <span class="tag">TEAM BELLA ???</span>
+          <b>CREPÚSCULO</b>
         </div>
         <div class="tile">
           <img alt="Paramore Rock" src="./imagens/paramore.jpg">
-          <span class="tag">LOUD!</span><b>PARAMORE / ROCK</b>
+          <span class="tag">LOUD!</span>
+          <b>PARAMORE / ROCK</b>
         </div>
         <div class="tile">
           <img alt="Avril Lavigne" src="./imagens/avril.jpg">
-          <span class="tag">★</span><b>AVRIL LAVIGNE</b>
+          <span class="tag">★</span>
+          <b>AVRIL LAVIGNE</b>
         </div>
         <div class="tile">
           <img alt="Sinuca" src="./imagens/sinuca.jpg">
-          <span class="tag">8 BALL</span><b>SINUCA TIME</b>
+          <span class="tag">8 BALL</span>
+          <b>SINUCA TIME</b>
         </div>
         <div class="tile">
           <img alt="Maionese Junior" src="./imagens/junior.jpg">
-          <span class="tag">YUM</span><b>MAIONESE JUNIOR</b>
+          <span class="tag">YUM</span>
+          <b>MAIONESE JUNIOR</b>
         </div>
         <div class="tile">
           <img alt="Guaraná Mineiro" src="./imagens/mineiro.jpg">
-          <span class="tag">MINEIRO!</span><b> MINEIRO</b>
+          <span class="tag">MINEIRO!</span>
+          <b>MINEIRO</b>
         </div>
       </div>
     </section>
   </main>
+
   <footer class="footer">MADE WITH ♥ FOR MARI</footer>
 </div>
 
+<!-- ELEMENTO DE ÁUDIO ÚNICO -->
+<audio id="audio" src="./musicas/decode.mp3"></audio>
+
 <script>
-  // Lista com os arquivos MP3 exatos da sua pasta ./musicas/
+  // Lista com as músicas da pasta ./musicas/
   const playlist = [
     { title: "DECODE", artist: "PARAMORE ★", src: "./musicas/decode.mp3" },
     { title: "NINGUÉM ME ENSINOU", artist: "LAGUM ★", src: "./musicas/lagum.mp3" },
@@ -297,7 +425,6 @@ button{font:18px 'VT323';border:2px solid #111;background:var(--lime);padding:7p
   const trackName = document.getElementById('trackName');
   const artistName = document.getElementById('artistName');
 
-  // Função para trocar e tocar a música
   function loadTrack(index) {
     if (playlist[index]) {
       if (trackName) trackName.textContent = playlist[index].title;
@@ -308,12 +435,11 @@ button{font:18px 'VT323';border:2px solid #111;background:var(--lime);padding:7p
         audio.play().then(() => {
           if (playBtn) playBtn.textContent = '⏸ PAUSE';
           if (disc) disc.classList.add('playing');
-        }).catch(err => console.log("Erro ao tocar:", err));
+        }).catch(err => console.log("Erro ao reproduzir:", err));
       }
     }
   }
 
-  // Botão Play / Pause
   if (playBtn && audio) {
     playBtn.addEventListener('click', () => {
       if (audio.paused) {
@@ -328,7 +454,6 @@ button{font:18px 'VT323';border:2px solid #111;background:var(--lime);padding:7p
     });
   }
 
-  // Botão Próxima
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
       currentIndex = (currentIndex + 1) % playlist.length;
@@ -336,7 +461,6 @@ button{font:18px 'VT323';border:2px solid #111;background:var(--lime);padding:7p
     });
   }
 
-  // Botão Anterior
   if (prevBtn) {
     prevBtn.addEventListener('click', () => {
       currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
@@ -344,5 +468,6 @@ button{font:18px 'VT323';border:2px solid #111;background:var(--lime);padding:7p
     });
   }
 </script>
+
 </body>
 </html>
