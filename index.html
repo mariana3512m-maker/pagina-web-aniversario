@@ -19,10 +19,20 @@ main{padding:22px}
 .marquee{overflow:hidden;white-space:nowrap;background:var(--dark);color:#fff;border:2px solid #111;padding:7px;font:20px 'VT323';margin-bottom:22px}
 .marquee span{display:inline-block;animation:scroll 18s linear infinite}
 @keyframes scroll{to{transform:translateX(-50%)}}
-.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
 .panel{border:3px solid #111;box-shadow:5px 5px 0 #111;background:#fff}
 .panel-title{background:#111;color:#fff;padding:7px 10px;font:21px 'VT323';letter-spacing:1px;display:flex;justify-content:space-between}
-.player{padding:16px;background:#eee}
+.player {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px;
+}
 .disc-wrap{display:flex;align-items:center;gap:15px}
 .disc{width:100px;height:100px;border-radius:50%;background:#222;border:5px solid #aaa;box-shadow:0 0 0 3px #111;position:relative;animation:spin 4s linear infinite;animation-play-state:paused}
 .disc.playing{animation-play-state:running}
