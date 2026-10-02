@@ -95,39 +95,35 @@ button{font:18px 'VT323';border:2px solid #111;background:var(--lime);padding:7p
   <!-- Lista de músicas vertical -->
   <div class="playlist">
     <div class="track-item active">
-      <div class="track">DECODE</div>
-      <div class="artist">PARAMORE ★</div>
+      <div class="trackName">DECODE</div>
+      <div class="artistName">PARAMORE ★</div>
     </div>
     <div class="track-item">
-      <div class="track">NINGUÉM ME ENSINOU</div>
-      <div class="artist">LAGUM ★</div>
+      <div class="trackName">NINGUÉM ME ENSINOU</div>
+      <div class="artistName">LAGUM ★</div>
     </div>
     <div class="track-item">
-      <div class="track">MY HAPPY ENDING</div>
-      <div class="artist">AVRIL LAVIGNE ★</div>
+      <div class="trackName">MY HAPPY ENDING</div>
+      <div class="artistName">AVRIL LAVIGNE ★</div>
     </div>
     <div class="track-item">
-      <div class="track">UNIVERSO DE COISAS QUE EU DESCONHEÇO</div>
-      <div class="artist">ANAVITÓRIA_LAGUM ★</div>
+      <div class="trackName">UNIVERSO DE COISAS QUE EU DESCONHEÇO</div>
+      <div class="artistName">ANAVITÓRIA_LAGUM ★</div>
     </div>
     <div class="track-item">
-      <div class="track">DROWN</div>
-      <div class="artist">BRING ME THE HORIZON ★</div>
+      <div class="trackName">DROWN</div>
+      <div class="artistName">BRING ME THE HORIZON ★</div>
     </div>
   </div>
 </div>
-          <div class="controls">
           <div class="controls">
   <button id="prev">⏮ ANTERIOR</button>
   <button id="play">▶ PLAY</button>
   <button id="next">NEXT ⏭</button>
 </div>
-          </div>
-          <audio id="audio" src="./musicas/decode.mp3"></audio>
-          <audio id="audio" src="./musicas/decode.mp3"></audio>
-          <audio id="audio" src="./musicas/decode.mp3"></audio>
-          <audio id="audio" src="./musicas/decode.mp3"></audio>
-          <audio id="audio" src="./musicas/decode.mp3"></audio>
+
+<!-- Apenas UMA tag de áudio -->
+<audio id="audio" src="./musicas/decode.mp3"></audio>
         </div>
       </section>
       <section class="panel">
@@ -178,59 +174,71 @@ button{font:18px 'VT323';border:2px solid #111;background:var(--lime);padding:7p
 </div>
 
 <script>
-const audio = document.getElementById('audio');
-const disc = document.getElementById('disc');
-const playBtn = document.getElementById('play');
-
-playBtn.addEventListener('click', () => {
-  if (audio.paused) {
-    audio.play();
-    playBtn.textContent = 'Ⅱ PAUSE';
-    disc.classList.add('playing');
-  } else {
-    audio.pause();
-    playBtn.textContent = '▶ PLAY';
-    disc.classList.remove('playing');
-  }
-});
-  <script>
-  // Lista de músicas com os nomes e artistas
+  // Lista com os arquivos MP3 exatos da sua pasta ./musicas/
   const playlist = [
-    { title: "DECODE", artist: "PARAMORE ★" },
-    { title: "NINGUÉM ME ENSINOU", artist: "LAGUM ★" },
-    { title: "MY HAPPY ENDING", artist: "AVRIL LAVIGNE ★" },
-    { title: "UNIVERSO DE COISAS QUE EU DESCONHEÇO", artist: "ANAVITÓRIA_LAGUM ★" },
-    { title: "DROWN", artist: "BRING ME THE HORIZON ★" }
+    { title: "DECODE", artist: "PARAMORE ★", src: "./musicas/decode.mp3" },
+    { title: "NINGUÉM ME ENSINOU", artist: "LAGUM ★", src: "./musicas/lagum.mp3" },
+    { title: "MY HAPPY ENDING", artist: "AVRIL LAVIGNE ★", src: "./musicas/avrilmusica.mp3" },
+    { title: "UNIVERSO DE COISAS QUE EU DESCONHEÇO", artist: "ANAVITÓRIA_LAGUM ★", src: "./musicas/lagunvitoria.mp3" },
+    { title: "DROWN", artist: "BRING ME THE HORIZON ★", src: "./musicas/drown.mp3" }
   ];
 
   let currentIndex = 0;
 
-  // Elementos da página
-  const trackName = document.getElementById("trackName");
-  const artistName = document.getElementById("artistName");
-  const prevBtn = document.getElementById("prev");
-  const nextBtn = document.getElementById("next");
+  const audio = document.getElementById('audio');
+  const disc = document.getElementById('disc');
+  const playBtn = document.getElementById('play');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+  const trackName = document.getElementById('trackName');
+  const artistName = document.getElementById('artistName');
 
-  // Função para atualizar a música no ecrã
-  function updateTrack() {
-    if (trackName && artistName) {
-      trackName.textContent = playlist[currentIndex].title;
-      artistName.textContent = playlist[currentIndex].artist;
+  // Função para trocar e tocar a música
+  function loadTrack(index) {
+    if (playlist[index]) {
+      if (trackName) trackName.textContent = playlist[index].title;
+      if (artistName) artistName.textContent = playlist[index].artist;
+      
+      if (audio) {
+        audio.src = playlist[index].src;
+        audio.play().then(() => {
+          if (playBtn) playBtn.textContent = '⏸ PAUSE';
+          if (disc) disc.classList.add('playing');
+        }).catch(err => console.log("Erro ao tocar:", err));
+      }
     }
   }
 
-  // Evento para a música anterior
-  prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
-    updateTrack();
-  });
+  // Botão Play / Pause
+  if (playBtn && audio) {
+    playBtn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        playBtn.textContent = '⏸ PAUSE';
+        if (disc) disc.classList.add('playing');
+      } else {
+        audio.pause();
+        playBtn.textContent = '▶ PLAY';
+        if (disc) disc.classList.remove('playing');
+      }
+    });
+  }
 
-  // Evento para a próxima música
-  nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % playlist.length;
-    updateTrack();
-  });
-</script>
+  // Botão Próxima
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % playlist.length;
+      loadTrack(currentIndex);
+    });
+  }
+
+  // Botão Anterior
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
+      loadTrack(currentIndex);
+    });
+  }
 </script>
 </body>
 </html>
