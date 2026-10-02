@@ -5,27 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>HAPPY B-DAY ★ MARI</title>
 <style>
-  <head>
-  <style>
-    /* Cole o código CSS aqui dentro */
-    .player {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .playlist {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .track-item {
-      display: flex;
-      flex-direction: column;
-    }
-  </style>
-</head>
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Special+Elite&family=VT323&display=swap');
 :root{--dark:#000000;--ink:#111;--lime:#d8ff53}
 *{box-sizing:border-box}
@@ -113,7 +92,11 @@ button{font:18px 'VT323';border:2px solid #111;background:var(--lime);padding:7p
   </div>
 </div>
           <div class="controls">
-            <button id="play">▶ PLAY</button>
+          <div class="controls">
+  <button id="prev">⏮ ANTERIOR</button>
+  <button id="play">▶ PLAY</button>
+  <button id="next">NEXT ⏭</button>
+</div>
           </div>
           <audio id="audio" src="./musicas/decode.mp3"></audio>
           <audio id="audio" src="./musicas/decode.mp3"></audio>
