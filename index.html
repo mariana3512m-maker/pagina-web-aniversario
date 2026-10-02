@@ -79,6 +79,26 @@ button{font:18px 'VT323';border:2px solid #111;background:var(--lime);padding:7p
   font-size: 0.85em;
   opacity: 0.8;
 }
+  /* Ajustes automáticos para ecrãs de telemóvel */
+@media (max-width: 600px) {
+  .player {
+    flex-direction: column; /* Coloca o disco em cima e as músicas em baixo */
+    text-align: center;
+    gap: 15px;
+  }
+
+  .playlist {
+    width: 100%;
+    align-items: center;
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 8px;
+  }
+}
 </style>
 </head>
 <body>
@@ -99,7 +119,6 @@ button{font:18px 'VT323';border:2px solid #111;background:var(--lime);padding:7p
             <div class="disc" id="disc"></div>
            <div class="player">
   <div class="disc-wrap">
-    <div class="disc" id="disc"></div>
   </div>
   
   <!-- Lista de músicas vertical -->
